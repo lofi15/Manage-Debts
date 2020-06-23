@@ -1,6 +1,8 @@
 package com.design.managedebts.model.expense;
 
 public class BalanceDetails {
+    // index on expenseId
+    long id;
 
     long lenderId;
 

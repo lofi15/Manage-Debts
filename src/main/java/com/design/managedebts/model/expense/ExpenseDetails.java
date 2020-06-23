@@ -1,6 +1,7 @@
 package com.design.managedebts.model.expense;
 
 import com.design.managedebts.enums.ExpenseType;
+import com.design.managedebts.enums.SplitType;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -11,6 +12,9 @@ public class ExpenseDetails {
 
     @Enumerated(EnumType.STRING)
     ExpenseType type;
+
+    @Enumerated(EnumType.STRING)
+    SplitType splitType;
 
     Long createdby;
 
@@ -24,7 +28,7 @@ public class ExpenseDetails {
 
     }
 
-    public ExpenseDetails(Long id, ExpenseType type, Long createdby, Long paidBy, String note,
+    public ExpenseDetails(Long id, ExpenseType type,SplitType splitType, Long createdby, Long paidBy, String note,
                           Double totalAmount) {
         this.id = id;
         this.type = type;
@@ -32,8 +36,24 @@ public class ExpenseDetails {
         this.paidBy = paidBy;
         this.note = note;
         this.totalAmount=totalAmount;
+        this.splitType=splitType;
     }
 
+    public SplitType getSplitType() {
+        return splitType;
+    }
+
+    public void setSplitType(SplitType splitType) {
+        this.splitType = splitType;
+    }
+
+    public Double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
 
     public Long getId() {
         return id;
