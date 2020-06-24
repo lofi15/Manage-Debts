@@ -1,10 +1,24 @@
 package com.design.managedebts.model.user;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user_expense_info")
 public class UserExpenseInfo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    long id;
+
+    // TODO : make composite key of userId and compositeId
 
     long expenseId;
 
     long userId;
+
+    public UserExpenseInfo() {
+
+    }
 
     public UserExpenseInfo(long expenseId, long userId) {
         this.expenseId = expenseId;

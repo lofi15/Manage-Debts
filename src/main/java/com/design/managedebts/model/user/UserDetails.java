@@ -1,8 +1,11 @@
 package com.design.managedebts.model.user;
 
+import javax.persistence.Id;
+
 public class UserDetails {
 
     //auto generate this
+    @Id
     private long id;
 
     private String name;

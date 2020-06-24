@@ -1,7 +1,14 @@
 package com.design.managedebts.model.expense;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "balance_details")
 public class BalanceDetails {
+
     // index on expenseId
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
     long lenderId;

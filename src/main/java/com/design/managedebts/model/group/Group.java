@@ -1,8 +1,15 @@
 package com.design.managedebts.model.group;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "group")
 public class Group {
 
     //auto-generate this
+    @Id
     private long id;
 
     private String name;

@@ -2,12 +2,16 @@ package com.design.managedebts.model.expense;
 
 import com.design.managedebts.enums.ExpenseType;
 import com.design.managedebts.enums.SplitType;
+import com.design.managedebts.request.CreateExpenseRequest;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "expense_details")
 public class ExpenseDetails {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @Enumerated(EnumType.STRING)
@@ -28,9 +32,8 @@ public class ExpenseDetails {
 
     }
 
-    public ExpenseDetails(Long id, ExpenseType type,SplitType splitType, Long createdby, Long paidBy, String note,
+    public ExpenseDetails(ExpenseType type,SplitType splitType, Long createdby, Long paidBy, String note,
                           Double totalAmount) {
-        this.id = id;
         this.type = type;
         this.createdby = createdby;
         this.paidBy = paidBy;
@@ -38,6 +41,7 @@ public class ExpenseDetails {
         this.totalAmount=totalAmount;
         this.splitType=splitType;
     }
+
 
     public SplitType getSplitType() {
         return splitType;
