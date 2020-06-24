@@ -23,8 +23,18 @@ public class CreateExpenseRequest {
 
     private SplitType splitType;
 
+    private Long groupId;
+
     public CreateExpenseRequest() {
 
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
     }
 
     public Long getCreatedBy() {

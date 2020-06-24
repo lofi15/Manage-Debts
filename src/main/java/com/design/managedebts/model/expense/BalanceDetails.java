@@ -1,25 +1,32 @@
 package com.design.managedebts.model.expense;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "balance_details")
 public class BalanceDetails {
 
     // index on expenseId
+
+    // here primary key can constitute of lenderId and borrowerId and expenseId
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    private long id;
 
-    long lenderId;
+    private long lenderId;
 
-    long borrowerId;
+    private long borrowerId;
 
-    double amount;
+    private double amount;
 
-    long expenseId;
+    private long expenseId;
+
+    private LocalDateTime createdAt;
 
     public BalanceDetails() {
+
     }
 
     public BalanceDetails(long lenderId, long borrowerId, double amount, long expenseId) {

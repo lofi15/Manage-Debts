@@ -30,7 +30,7 @@ public class ExpenseController {
 
     @PostMapping("/equal")
     public Response<ExpenseCreationResponse> createExpense(@RequestBody CreateExpenseRequest request){
-
+        expenseService.createExpense(request);
         return new Response<>(HttpStatus.OK,new ExpenseCreationResponse());
     }
 

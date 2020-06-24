@@ -6,9 +6,6 @@ import javax.persistence.*;
 @Table(name = "user_expense_info")
 public class UserExpenseInfo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
 
     // TODO : make composite key of userId and compositeId
 

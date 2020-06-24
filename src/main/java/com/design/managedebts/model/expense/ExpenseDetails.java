@@ -5,6 +5,7 @@ import com.design.managedebts.enums.SplitType;
 import com.design.managedebts.request.CreateExpenseRequest;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "expense_details")
@@ -12,21 +13,23 @@ public class ExpenseDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
-    ExpenseType type;
+    private ExpenseType type;
 
     @Enumerated(EnumType.STRING)
-    SplitType splitType;
+    private SplitType splitType;
 
-    Long createdby;
+    private Long createdby;
 
-    Long paidBy;
+    private Long paidBy;
 
-    String note;
+    private String note;
 
-    Double totalAmount;
+    private Double totalAmount;
+
+    private LocalDateTime createdOn;
 
     public ExpenseDetails(){
 
@@ -42,6 +45,13 @@ public class ExpenseDetails {
         this.splitType=splitType;
     }
 
+    public LocalDateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(LocalDateTime createdOn) {
+        this.createdOn = createdOn;
+    }
 
     public SplitType getSplitType() {
         return splitType;

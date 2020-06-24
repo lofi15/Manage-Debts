@@ -4,12 +4,7 @@ import javax.persistence.Id;
 
 public class UserFriendsInfo {
 
-    // index on userId
-    @Id
-    long id;
-
     // here comibation of userId and friendId is not unique if entries are stored two times.
-
     long userId;
 
     long friendId;
