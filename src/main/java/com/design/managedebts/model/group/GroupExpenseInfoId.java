@@ -20,7 +20,7 @@ public class GroupExpenseInfoId implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof GroupExpenseInfoId)) return false;
         GroupExpenseInfoId that = (GroupExpenseInfoId) o;
         return groupId == that.groupId &&
                 expenseId == that.expenseId;

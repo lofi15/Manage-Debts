@@ -1,13 +1,19 @@
 package com.design.managedebts.model.user;
 
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
-public class UserFriendsInfo {
+@Entity
+@Table(name = "user_friends_info")
+public class UserFriendsInfo implements Serializable {
 
-    // here comibation of userId and friendId is not unique if entries are stored two times.
-    long userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-    long friendId;
+    private long userId;
+
+    private long friendId;
 
     public UserFriendsInfo(long userId, long friendId) {
         this.userId = userId;
@@ -31,5 +37,13 @@ public class UserFriendsInfo {
 
     public void setFriendId(long friendId) {
         this.friendId = friendId;
+    }
+
+    @Override
+    public String toString() {
+        return "UserFriendsInfo{" +
+                "userId=" + userId +
+                ", friendId=" + friendId +
+                '}';
     }
 }

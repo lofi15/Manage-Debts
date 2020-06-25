@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/create/expense/")
+@RequestMapping("/expense/create/")
 public class ExpenseController {
 
     // create expense -> 1. of either group or individual(with friends)
@@ -21,9 +21,9 @@ public class ExpenseController {
     // delete expense
 
     // edit expense
-            // 1. change totalAmount
-            //2. add users to expense
-            // 3. remove users from expense
+             // 1. change totalAmount
+             //2. add users to expense
+             // 3. remove users from expense
 
     @Autowired
     ExpenseService expenseService;
@@ -33,6 +33,8 @@ public class ExpenseController {
         expenseService.createExpense(request);
         return new Response<>(HttpStatus.OK,new ExpenseCreationResponse());
     }
+
+
 
 
 
