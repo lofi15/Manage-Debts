@@ -18,19 +18,12 @@ public class UserController {
     // remove friends
     // add user
 
-//    public Response<T> createUser(UserDetails userDetails){
-//
-//    }
-//
-//    public Response<T> addFriend(UserDetails friend){
-//
-//    }
-        @PostMapping("/friend/add")
-        public Response<String> addFriend(@RequestParam("friend_id") String friendId,
-                                          @RequestParam("user_id") String userId){
+    @PostMapping("/friend/add")
+    public Response<String> addFriend(@RequestParam("friend_id") String friendId,
+                                      @RequestParam("user_id") String userId){
 
-            return null;
-        }
+        return null;
+    }
 
 
 

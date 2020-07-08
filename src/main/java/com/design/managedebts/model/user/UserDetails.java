@@ -1,11 +1,14 @@
 package com.design.managedebts.model.user;
 
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Table(name = "user_details")
+@Entity
 public class UserDetails {
 
     //auto generate this
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
